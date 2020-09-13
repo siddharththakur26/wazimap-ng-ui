@@ -1,7 +1,6 @@
 from behave import *
 from pages.locators import RichData
 
-
 @step("I click on Rich data item")
 def step_impl(context):
     rich_data_icon_xpath = context.common.find_element_by_xpath(RichData.rich_data_icon)
@@ -11,7 +10,9 @@ def step_impl(context):
 @then("User must see summary")
 def step_impl(context):
     rich_data_navigation_summary_xpath = context.common.find_element_by_xpath(RichData.rich_data_navigation_summary)
-    assert True == rich_data_navigation_summary_xpath.is_displayed(), "Summary is not displayed"
+    country_name = rich_data_navigation_summary_xpath.text
+    assert "South Africa" == country_name, "Summary is not displayed"
+
 
 
 @step("I click on Demographic item on navigation list")

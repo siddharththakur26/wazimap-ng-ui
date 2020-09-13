@@ -1,5 +1,6 @@
 from behave import *
 import time
+from pages.locators import PointMapper
 
 map_original_view = None
 boolean = True
@@ -12,8 +13,7 @@ def step_impl(context):
         time.sleep(5)
         map_original_view = context.common.decode_base_64_png(context.common.get_screenshot_base_64())
         boolean = False
-    point_mapper_grocery_store_slider = "//div[@class='point-mapper-content__list']//span[@class='slider round']"
-    context.common.click_element_via_javascript_executor(point_mapper_grocery_store_slider)
+    context.common.click_element_via_javascript_executor(PointMapper.point_mapper_grocery_store_slider)
 
 
 @then("User must see the Grocery stores highlights on the map")
