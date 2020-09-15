@@ -9,3 +9,5 @@ yarn-error.log
 __pycache__
 .DS_Store
 .idea/
+**/api/.hypothesis
+**/api/.pytest_cache
