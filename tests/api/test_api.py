@@ -32,9 +32,9 @@ class TestApi:
         assert req.status_code==200, "{} == not responding".format(url)
 
     def test_post_status(self, url):
-        req = requests.post(url, self.getjson('post_payload.txt'))
+        req = requests.post(url, self.getjson('payload.txt'))
         assert req.status_code==405, "{} should not be posting".format(url)
 
     def test_put_status(self, url):
-        req = requests.put(url, self.getjson('post_payload.txt'))
+        req = requests.put(url, self.getjson('payload.txt'))
         assert req.status_code==405, "{} should not be put".format(url)
